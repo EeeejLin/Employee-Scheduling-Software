@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>告警列表</title>
+  <link rel='stylesheet' href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/normalize.css">
+  <link rel="stylesheet" href="css/base/basicStyle.css">
+  <link rel="stylesheet" href="css/layout/nav.css">
+  <link rel="stylesheet" href="css/components/pagination.css">
+  <link rel="stylesheet" href="css/pages/notice.css">
+  <link rel="stylesheet" href="css/base/jquery-ui.css">
+  <script src="js/jQuery_3.4.1.js"></script> 
+  <script src="js/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="header"></div> 
+    <script>
+        $("#header").load("header.html");
+    </script> 
+    <div class="container">
+        <div class="box">
+            <h1>告警列表</h1>
+        </div>
+        <div class="flex">
+            <div>
+                <a class="btn allbtn" href="＃">匯出資料</a>
+            </div>
+            <div id="filter">
+                <a id="filter" class="btn filterbtn">展開篩選條件</a>
+                <div id="filterbox" class="filterbox">
+                    <div class="flex">
+                        <label  for="">起迄日期</label>
+                        <input class="mg-3" type="text" id="from" name="from"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        <input class="mg-3" type="text" id="to" name="to"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="mg-5">
+                        <label  for="">駐點</label>
+                        <select style="margin: 0 3px;" id="" name="">
+                            <option>蘇澳地磅站</option>
+                            <option>蘇澳地磅站</option>
+                        </select>
+                    </div>
+                    <div class="mg-5">
+                        <label for="name">姓名</label>
+                        <input class="mg-3" type="text" name="name" id="name"/>
+                    </div>
+                    <div class="mg-5">
+                        <label for="">標案名稱</label>
+                        <select style="margin: 0 3px;" id="" name="">
+                            <option>B段地磅人員-和平</option>
+                            <option>B段地磅人員-和平</option>
+                        </select>
+                    </div>
+                    <input class="btn searchbtn mg-5" type="submit" value="查詢">
+                </div>
+            </div>
+        </div>
+        <table class="tablemanager notice mg-20">
+        <thead>
+            <th class="columnsTop">標案名稱&nbsp;<i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th class="columnsTop">駐點&nbsp;<i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th class="columnsTop">告警時間&nbsp;<i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th class="columnsTop">姓名&nbsp;<i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th class="columnsTop">異常狀態說明&nbsp;<i class="fa fa-sort" aria-hidden="true"></i></th>
+        </thead>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag late">遲到</span></td>
+        </tr>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag early">早退</span></td>
+        </tr>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag come">無故到場</span></td>
+        </tr>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag time">上班總時數超過12小時</span></td>
+        </tr>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag time">未間隔11小時休息時間</span></td>
+        </tr>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag none">曠職</span></td>
+        </tr>
+        <tr>
+            <td class="columns">B段地磅人員-和平</td>
+            <td class="columns">蘇澳地磅站</td>
+            <td class="columns">2020-07-07 15:54</td>
+            <td class="columns">林煌里</td>
+            <td class="columns"><span class="statetag normal">正常</span></td>
+        </tr>
+        </table>
+    </div> 
+</body>
+<script src="js/filter.js"></script>
+<script src="js/table_manage.js"></script>
+<!-- pagination -->
+<script src="js/pagination.js"></script>
+<!-- date area -->
+<script>
+$(function() {
+$( "#from" ).datepicker({
+defaultDate: "+1w",
+changeMonth: true,
+numberOfMonths: 1,
+onClose: function( selectedDate ) {
+$( "#to" ).datepicker( "option", "minDate", selectedDate );
+}
+});
+$( "#to" ).datepicker({
+defaultDate: "+1w",
+changeMonth: true,
+numberOfMonths: 1,
+onClose: function( selectedDate ) {
+$( "#from" ).datepicker( "option", "maxDate", selectedDate );
+}
+});
+});
+</script>
+</html> 

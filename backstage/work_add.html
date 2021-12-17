@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>新增班表</title>
+  <link rel='stylesheet' href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/normalize.css">
+  <link rel="stylesheet" href="css/base/basicStyle.css">
+  <link rel="stylesheet" href="css/layout/nav.css">
+  <link rel="stylesheet" href="css/components/toggle.css">
+  <link rel="stylesheet" href="css/components/colorpick.css">
+  <link rel="stylesheet" href="css/pages/work_add.css">
+  <link rel="stylesheet" href="css/base/jquery-ui.css">
+  <script src="js/jQuery_3.4.1.js"></script> 
+  <script src="js/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="header"></div> 
+    <script>
+        $("#header").load("header.html");
+    </script> 
+    <div class="container">
+        <div class="box">
+            <h1>排班作業/當月、未來班表/新增班表</h1>
+        </div>
+        <div class="flex">
+            <div>
+                <a class="btn allbtn" href="work_add.html">返回排班作業</a>
+                <a class="btn allbtn" href="work_return.html">匯入班表</a>
+                <a class="btn allbtn" href="work_return.html">匯出班表</a>
+            </div>
+            <span class="gr_word">更新時間：2020-06-25 14:30:00</span>
+        </div>
+        <div class="innerbox" style="border-color: #dbdbdb; margin-bottom: 0;">
+            <button id="content" class="flex box" style="background-color:#dbdbdb; padding:5px 10px 5px 10px; margin: 0px;">
+                <span class="gr_word fs-14">班表資訊</span>
+                <div class="flex">
+                    <label class="checkbox-square checkbox-square1" style="height: 35px;">
+                        <input type="checkbox" />
+                        <span class="track3 thumb"></span>
+                        <pre class="state">false</pre>
+                    </label>
+                    <label class="checkbox-square checkbox-square1" style="margin-left: 10px; height: 35px;">
+                        <input type="checkbox" />
+                        <span class="track4 thumb"></span>
+                        <pre class="state">false</pre>
+                    </label>
+                </div>
+            </button>
+            <div id="insider" class="content gr_word fs-14" style="vertical-align: middle;">
+                <div class="fs-14" style="display: inline-block; width: 49.2%;">
+                    <div class="flex mg-15">
+                        <span style="width: 200px;">承攬商名稱</span>
+                        <div class="wordback" style="width: 100%;"><span>交通部公路總局第四區養護工程處</span></div>
+                    </div>
+                    <div class="flex mg-15">
+                        <span style="width: 200px;">標案</span>
+                        <div class="wordback" style="width: 100%;"><span>A段地磅人員-蘇澳</span></div>
+                    </div>
+                </div>
+                <div style="display: inline-block; width: 49.2%;">
+                    <div class="flex mg-15">
+                        <span style="width: 200px;">班表名稱</span>
+                        <div class="wordback" style="width: 100%;"><span>A段地磅人員-蘇澳-109年07月</span></div>
+                    </div>
+                    <div class="flex mg-15">
+                        <span style="width: 200px;">工時制度</span>
+                        <div class="wordback" style="width: 100%;"><span>四周變形工時制度</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex jus-start" style="margin-top:10px;">
+            <div>
+                <div class="flex jus-start">
+                    <div>
+                        <div class="color_palette flex jus-start">
+                            <div class="pick" id="blue">平<br><span class="timeset" style="font-size: 8px;">(8:00-17:00)</span></div>
+                            <div class="pick" id="yellow">早<br><span class="timeset" style="font-size: 8px;">(8:00-16:00)</span></div>
+                            <div class="pick" id="green">晚<br><span class="timeset" style="font-size: 8px;">(16:00-00:00)</span></div>
+                        </div> 
+                        <div class="color_palette flex jus-start">
+                            <div class="pick" id="deep">夜<br><span class="timeset" style="font-size: 8px;">(00:00-08:00)</span></div>
+                            <div class="pick" id="orange" style="min-width: 85px; margin: 3px;">例</div>
+                        </div> 
+                    </div> 
+                    <div>
+                        <div class="color_palette flex jus-start">
+                            <button class="pick1 holidaybtn" id="gray">休</button>
+                            <div id="holiday">
+                                <div class="pick" id="orange">休</div>
+                                <div class="pick" id="orange">休早</div>
+                                <div class="pick" id="orange">休晚</div>
+                                <div class="pick" id="orange">休夜</div>
+                                <div class="pick" id="orange">休平</div>
+                            </div>
+                        </div> 
+                        <div class="color_palette flex jus-start">
+                            <button class="pick1 nationbtn" id="gray">國</button>
+                            <div id="nation">
+                                <div class="pick" id="orange">國</div>
+                                <div class="pick" id="orange">國早</div>
+                                <div class="pick" id="orange">國晚</div>
+                                <div class="pick" id="orange">國夜</div>
+                                <div class="pick" id="orange">國平</div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="innerbox gr_word" style="border-color: #dbdbdb; margin-left: 3px;">
+                <div class="fs-14" style="margin:5px;">每日排班人力配置</div>
+                <div class="worktime1 fs-14" style="margin:2px 0;">平：321</div>
+                <div class="worktime2 fs-14" style="margin:2px 0;">早：332</div>
+                <div class="worktime3 fs-14" style="margin:2px 0;">晚：322</div>
+                <div class="worktime4 fs-14" style="margin:2px 0;">夜：133</div>
+            </div>  
+        </div>  
+        <div class="out">
+            <table class="table-scroll work">
+              <thead>
+                <tr>
+                    <th>項次</th>
+                    <th>姓名</th>
+                    <th>
+                        <span>7/1</span>
+                        <span>(三)</span>
+                        <div class="week">W1</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor None"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning None"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening None"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night None"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/2</span>
+                        <span>(四)</span>
+                        <div class="week">W1</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/3</span>
+                        <span>(五)</span>
+                        <div class="week">W1</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/4</span>
+                        <span>(六)</span>
+                        <div class="week">W1</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>                        
+                    </th>
+                    <th id="tooltip" class="tooltip">
+                        <span>7/5</span>
+                        <span>(日)</span>
+                        <div id="week" class="weekfree">W1</div>
+                        <div id="weekholiday"class="weekfree">中秋節</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>                   
+                    </th>
+                    <th>
+                        <span>7/6</span>
+                        <span>(一)</span>
+                        <div class="week">W1</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/7</span>
+                        <span>(二)</span>
+                        <div class="week">W1</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/8</span>
+                        <span>(三)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/9</span>
+                        <span>(四)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/10</span>
+                        <span>(五)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/11</span>
+                        <span>(六)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/12</span>
+                        <span>(日)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/13</span>
+                        <span>(一)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/14</span>
+                        <span>(二)</span>
+                        <div class="week">W2</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/8</span>
+                        <span>(三)</span>
+                        <div class="week">W3</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                    <th>
+                        <span>7/9</span>
+                        <span>(四)</span>
+                        <div class="week">W3</div>
+                        <!-- 班別狀態 -->
+                        <div class="colorcircle">
+                            <div style="display: inline-block;" id="circleNor" class="circle Nor"></div>
+                            <div style="display: inline-block;" id="circlemMorning" class="circle Morning"></div><br>
+                            <div style="display: inline-block;" id="circleEvening" class="circle Evening"></div>
+                            <div style="display: inline-block;" id="circleNight" class="circle Night"></div>
+                        </div>
+                    </th>
+                </tr>
+              </thead>
+              <tbody class="body-half-screen">
+                    <tr>
+                        <td class="color">1</td>
+                        <td class="color">
+                            <span>林溪葇</span>
+                            <span style="color: #a9a9a9;">機電工程員</span>
+                        </td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                    </tr>
+                    <tr>
+                        <td class="color">2</td>
+                        <td class="color">
+                            <span>張大牛</span>
+                            <span style="color: #a9a9a9;">機電工程員</span>
+                            <div id="notice">
+                                <span class="notice">休息日少 2 天</span>
+                                <span class="notice">例假日少 2 天</span>
+                                <span class="notice">(1週)例假日少1天</span>
+                            </div>
+                        </td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                    </tr>
+                    <tr>
+                        <td class="color">3</td>
+                        <td class="color">
+                            <span>王曉明</span>
+                            <span style="color: #a9a9a9;">機電工程員</span>
+                        </td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                    </tr>
+                    <tr>
+                        <td class="color">4</td>
+                        <td class="color">
+                            <span>林煌里</span>
+                            <span style="color: #a9a9a9;">機電工程員</span></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                    </tr>
+                    <tr>
+                        <td class="color">5</td>
+                        <td class="color">
+                            <span>吳尚樺</span>
+                            <span style="color: #a9a9a9;">機電工程員</span></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                        <td class="color row"></td>
+                    </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="mg-20-btn align_center">
+            <a href="work.html"><input class="btn cancelbtn" type="button" name="Open" onclick="popupClose(this);"  value="取消"></a>
+            <a href="work.html"><input class="btn savebtn" type="button" name="Open" onclick="popupClose(this);"  value="確定"></a>
+        </div>
+    </div> 
+</body>
+<!-- toggle -->
+<script src="js/toggle.js"></script>
+<!-- colorpick -->
+<script src="js/colorpick.js"></script>
+<!-- holidayhover -->
+<script src="js/holidayhover.js"></script>
+<!-- 收合 班表資訊/休假/國假 -->
+<script>
+$("#content").click(function() {
+$("#insider").toggle();
+});
+$(".nationbtn").click(function() {
+$("#nation").toggle();
+});
+$(".holidaybtn").click(function() {
+$("#holiday").toggle();
+});
+</script>
+<!-- 年月日曆 -->
+<script src="js/yearmonth.js"></script>
+</html> 

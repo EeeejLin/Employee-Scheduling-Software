@@ -1,0 +1,21 @@
+.pagesControllers{
+margin-left:3px;
+}
+.for_numrows{
+color: #696969;
+margin-left:5px;
+}
+.for_numrows select{
+border: 1px solid #dbdbdb;
+color: #696969;
+padding: 0 5px;
+}
+.pagecontroller{
+border-radius: 3px;
+margin: 5px;
+height: 25px;
+color: #696969;
+}
+.pagecontroller-f, .pagecontroller-p, .pagecontroller-n, .pagecontroller-l {
+color: #dbdbdb;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>工時設定</title>
+  <link rel='stylesheet' href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/normalize.css">
+  <link rel="stylesheet" href="css/base/basicStyle.css">
+  <link rel="stylesheet" href="css/layout/nav.css">
+  <link rel="stylesheet" href="css/pages/schedule_edit.css">
+  <script src="js/jQuery_3.4.1.js"></script> 
+</head>
+<body>
+  <div id="header"></div> 
+  <script>
+      $("#header").load("header.html");
+  </script> 
+  <div class="container">
+      <div class="box">
+          <h1>參數管理/班別規則/工時設定</h1>
+      </div>
+      <div class="flex">
+          <div>
+              <table class="schedule">
+                <tr>
+                  <td class="columns-1">二週工時設定</td>
+                  <td class="columns-1">
+                    <div class="innerbox" style="margin-top:0;">
+                      <div class="wrapper">
+                        <span class="boxInTitle">班別</span>
+                        <div class="mg-20">
+                          <label class="form-checkbox-label">
+                            <input id="normal" name="companysee" class="form-checkbox-field" type="checkbox" />
+                            <span>平班</span>
+                            <input id="morning" name="companyadd" class="form-checkbox-field" type="checkbox" />
+                            <span>早班</span>
+                            <input id="late" name="companyedit" class="form-checkbox-field" type="checkbox" />
+                            <span>晚班</span>
+                            <input id="night" name="companydelete" class="form-checkbox-field" type="checkbox" />
+                            <span>夜班</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                
+                    <div class="innerbox">
+                      <div class="wrapper">
+                        <span class="boxInTitle">假日班別</span>
+                          <div class="mg-20">
+                            <input id="national" name="companyadd" class="form-checkbox-field" type="checkbox" />
+                            <span>國定假日</span>
+                          </div>
+                          <div class="national mg-20">
+                            <label class="form-checkbox-label">
+                              <input id="normal" name="companysee" class="form-checkbox-field" type="checkbox" />
+                              <span>國平</span>
+                              <input id="morning" name="companyadd" class="form-checkbox-field" type="checkbox" />
+                              <span>國早</span>
+                              <input id="late" name="companyedit" class="form-checkbox-field" type="checkbox" />
+                              <span>國晚</span>
+                              <input id="night" name="companydelete" class="form-checkbox-field" type="checkbox" />
+                              <span>國夜</span>
+                            </label>
+                          </div>
+                          <div class="mg-20">
+                            <input id="holiday" name="companyadd" class="form-checkbox-field" type="checkbox" />
+                            <span>休假日</span>
+                          </div>
+                          <div class="holiday mg-20">
+                            <label class="form-checkbox-label">
+                              <input id="normal" name="companysee" class="form-checkbox-field" type="checkbox" />
+                              <span>休平</span>
+                              <input id="morning" name="companyadd" class="form-checkbox-field" type="checkbox" />
+                              <span>休早</span>
+                              <input id="late" name="companyedit" class="form-checkbox-field" type="checkbox" />
+                              <span>休晚</span>
+                              <input id="night" name="companydelete" class="form-checkbox-field" type="checkbox" />
+                              <span>休夜</span>
+                            </label>
+                          </div>
+                      </div>
+                    </div>
+
+                    
+                    <div class="innerbox">
+                      <div class="wrapper">
+                        <span class="boxInTitle">工時檢查</span>
+                        <div class="mg-20">
+                          <label class="form-checkbox-label">
+                            <div style="display:block;">
+                              <input id="normal" name="companysee" class="form-checkbox-field" type="checkbox" />
+                              <span>定義週期起始點，此後<input placeholder="14" min="0" type="number" value="" id="quantity" class="quantity">日為一週期</span>
+                            </div>
+                            <div class="mg-20" style="display: block;">
+                              <input id="morning" name="companyadd" class="form-checkbox-field" type="checkbox" />
+                              <span>一週內應有<input placeholder="1" min="0" type="number" value="" id="quantity" class="quantity">例</span>
+                            </div>
+                            <div class="mg-20" style="display: block;">
+                              <input id="late" name="companyedit" class="form-checkbox-field" type="checkbox" />
+                              <span>二週內應有<input placeholder="2" min="0" type="number" value="" id="quantity" class="quantity">休</span>
+                            </div>
+                            <div class="mg-20" style="display: block;">
+                              <input id="night" name="companydelete" class="form-checkbox-field" type="checkbox" />
+                              <span>不得連續出勤逾<input placeholder="6" min="0" type="number" value="" id="quantity" class="quantity">日(含)</span>
+                            </div>
+                            <div class="mg-20" style="display: block;">
+                              <input id="night" name="companydelete" class="form-checkbox-field" type="checkbox" />
+                              <span>換班至少間<input placeholder="11" min="0" type="number" value="" id="quantity" class="quantity">小時休息時間</span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+      </div>
+  </div> 
+  <div class="mg-20-btn align_center">
+    <a href="schedule.html"><input class="btn cancelbtn" type="button" name="Open" value="取消"></a>
+    <a href="schedule.html"><input class="btn savebtn" type="button" name="Open" value="確定"></a>
+  </div>
+</body>
+<!-- checkshow -->
+<script>
+$(document).ready(function () {
+//show all results
+$('.national').hide();
+$('.holiday').hide();
+//When any checkbox inside #filter-container is clicked ...
+});
+$('#national').click(function() {
+  if($("#national").is(':checked')) {
+    $('.national').show();
+  } else {
+    $('.national').hide();
+  }
+});
+$('#holiday').click(function() {
+  if($("#holiday").is(':checked')) {
+    $('.holiday').show();
+  } else {
+    $('.holiday').hide();
+  }
+});
+</script>
+</html>

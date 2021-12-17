@@ -1,0 +1,21 @@
+@font-face {
+  font-family:Source-Sans-Pro;
+  src: url(font/Source-Sans-Pro.ttf);
+}
+
+@font-face{
+  font-family:微軟正黑體;
+  src: url(font/Microsoft JhengHei.ttf);
+}
+
+@font-face {
+  font-family:HanWangHeiHeavy;
+  src: url(font/wt014.ttf);
+}
+
+/* 英文字型與一些符號等 - 大小： 190KB */
+@font-face {
+  font-family: DroidSans;
+  src: url(DroidSans.woff);
+  unicode-range: U+000-5FF, U+1e00-1fff, U+2000-2300;
+}

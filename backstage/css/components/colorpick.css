@@ -1,0 +1,41 @@
+.color_palette .pick, .color_palette .pick1{
+display: inline-block;
+min-width: 85px;
+height: 40px;
+border-radius: 3px;
+margin: 3px;
+font-size: 14px;
+text-align: center;
+color: #696969;
+}
+.color_palette .pick1{
+min-width: 50px;  
+}
+#blue{
+border: 1px solid #0081B4;
+padding: 5px 0;
+}
+#yellow{
+border: 1px solid #E2A600;
+padding: 5px 0;
+}
+#green{
+border: 1px solid #518335;  
+padding: 5px 0;
+}
+#orange{
+border: 1px solid #C85100; 
+padding: 12px 0; 
+margin: 3px 1px;
+min-width: 50px;
+}
+#gray{
+border: 1px solid #696969;  
+background-color: #696969 ; 
+color: #fff;
+padding: 12px 0;   
+}
+#deep{
+border: 1px solid #002D67; 
+padding: 5px 0;
+}

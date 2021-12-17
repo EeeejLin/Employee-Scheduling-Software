@@ -1,0 +1,292 @@
+/* Common Components - starts */
+.container{
+width: 100%;
+padding: 60px 30px 0px 210px;
+}
+.flex{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.jus-start{
+justify-content:flex-start;
+}
+.jus-end{
+justify-content:flex-end;
+}
+.mg-3{
+margin-left: 3px;
+}
+.mg-5{
+margin-top: 5px;
+}
+.mg-10{
+margin: 10px;
+}
+.mg-15{
+margin: 15px;
+}
+.mg-20-btn{
+margin: 20px;
+}
+.mg-20{
+margin-top: 20px;
+}
+.mg-50{
+margin-top: 50px;
+}
+.mg-80{
+margin-top: 80px;
+}
+textarea{
+padding: 10px;
+width: 100%;
+box-sizing: border-box;
+overflow: auto;
+border: 1px solid #979797;
+border-radius: 3px;
+resize: none;
+font-size: 16px;
+color: #3c3c3c;
+}
+input{
+background-color: #fff;
+border:1px solid #dbdbdb;
+border-radius: 3px;
+padding: 6px 10px;
+box-sizing: border-box;
+}
+::-webkit-input-placeholder { 
+color: #cacaca;
+}
+:-moz-placeholder {
+color: #cacaca;
+}
+::-moz-placeholder { 
+color: #cacaca;
+}
+:-ms-input-placeholder {
+color: #cacaca;
+}
+select{
+height: 30px;
+color: #696969;
+border: 1px solid #dbdbdb;
+border-radius: 3px;
+}
+.box{
+width: 100%;
+padding: 5px 0 5px 10px;
+background-color: #EEF2F3;
+margin: 20px 0;
+}
+.dotbox{
+border: 1px dotted #dbdbdb;
+padding: 20px 0 20px 15px;
+margin: 20px 0;
+}
+.innerbox{
+border: 1px solid #696969;
+margin: 20px 0;
+}
+.filterbox{
+position: absolute;
+right: 30px;
+background: #FFFFFF;
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+border: 1px solid rgba(121, 121, 121, 0.275);
+padding: 20px 20px;
+margin: 20px 0;
+color: #0061C6;
+display: none;
+}
+.line{
+width: 100%;
+height: 1px;
+background-color:#696969 ;
+}
+.wordback{
+font-size: 14px;
+padding: 4px 3px;
+background-color: #f3f3f3;
+}
+/* Table */
+table {
+display: table;
+table-layout: fixed;
+margin: 0 auto;
+width: 100%;
+border-collapse: collapse;
+color: #696969;
+font-size: 14px;
+text-align: left;
+}
+tr {
+display: table-row;
+}
+td {
+display: table-cell;
+}
+.columnsTop {
+color: #fff;
+padding: 1.2em 1em;
+background-color: #696969;
+border: 0.5px solid #979797 ;
+}
+.columns {
+vertical-align: middle;
+padding: 1.2em 1em;
+border: 0.5px solid #979797 ;
+}
+/*--------align settings--------*/
+.ver-align{
+vertical-align: middle;
+align-items: center;
+}
+.align_left{
+text-align: left;
+}
+.align_right{
+text-align: right;
+}
+.align_center{
+text-align: center;
+}
+/* Fonts Settings */
+h1{
+font-size: 14px;
+color:#002750;
+}
+h2{
+font-size: 16px;
+font-weight: 600;
+color: #696969;
+margin-top: 30px;
+}
+.fw-600{
+font-weight: 600;
+}
+.fs-24{
+font-size: 24px;
+}
+.fs-20{
+font-size: 20px;
+}
+.fs-18{
+font-size: 18px;
+}
+.fs-16{
+font-size: 16px;
+}
+.fs-14{
+font-size: 14px;
+}
+.wh_word{
+color: #fff;
+}
+.gr_word{
+color: #696969;
+}
+.red_word{
+color: #840000;
+}
+.deepBlue_word{
+color: #002D67;
+}
+.blue_word{
+color: #0051a5;
+}
+.lightBlue_word{
+color: #007DFF;
+}
+/* Button Components */
+.edit, .delete, .view, .return{
+font-size: 16px;
+font-weight: 600;
+color:#0051a5;
+border: none;
+}
+.btn{
+padding: 6px 10px;
+color: #fff; 
+font-size: 16px;
+border-radius: 3px;
+border: none;
+cursor: pointer;
+}
+.deletebtn, .savebtn, .allbtn{
+background-color:#0051a5;
+}
+.cancelbtn{
+background-color:#696969;
+}
+.searchbtn,.filterbtn{
+background-color: #007DFF;
+}
+.filterbtn{
+font-weight: normal;
+padding: 6px;
+}
+.nextbtn{
+font-size: 16px;
+font-weight: 600;
+color:#0051a5;
+border: 1px solid #0051a5;
+background-color: #fff;
+border-radius: 3px;
+padding: 6px 10px;
+}
+/* Color Components */
+.state{
+padding: 2px;
+border-radius: 12.5px;
+color: #ffffff;
+height: 25px;
+font-size:18px;
+}
+.none{
+background-color: #840000;
+}
+.late{
+background-color: #C85100;
+}
+.come{
+background-color: #E2A600;
+}
+.normal{
+background-color: #518335;
+}
+.early{
+background-color: #0081B4;
+}
+.time{
+background-color: #002D67;
+}
+/* loading */
+.line {
+display: inline-block;
+width: 15px;
+height: 15px;
+border-radius: 15px;
+background-color: #4b9cdb;
+}
+.load-3 .line:nth-last-child(1) {
+animation: loadingC 0.6s 0.1s linear infinite;
+}
+.load-3 .line:nth-last-child(2) {
+animation: loadingC 0.6s 0.2s linear infinite;
+}
+.load-3 .line:nth-last-child(3) {
+animation: loadingC 0.6s 0.3s linear infinite;
+} 
+@keyframes loadingC {
+0 {
+    transform: translate(0, 0);
+}
+50% {
+    transform: translate(0, 15px);
+}
+100% {
+    transform: translate(0, 0);
+}
+}

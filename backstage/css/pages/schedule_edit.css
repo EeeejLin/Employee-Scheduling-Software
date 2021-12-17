@@ -1,0 +1,75 @@
+.schedule tr{
+padding: 1em;
+}
+.schedule tr th:first-child,  .schedule tr td:first-child  {
+text-align: left;
+width: 20vw;
+color: #0051A5;
+padding-left: 2em;
+}
+.schedule tr th:nth-child(2),  .schedule tr td:nth-child(2)  {
+padding-right: 3em;
+}
+.columnsTop-1, .columns-1{
+padding: 1em .3em;
+vertical-align: top;
+border-bottom: 1px solid #dbdbdb;
+}
+.boxInTitle{
+display: block;
+}
+i{
+margin: 0 3px;
+}
+.form-check-default{
+opacity: 0.5;
+}
+.form-checkbox-label input{
+position: relative;
+}
+.form-check-default::before {
+content: "";
+position: absolute;
+font-size: 20px;
+width: 13px;
+height: 13px;
+overflow: hidden;
+box-sizing: border-box;
+color: #dbdbdb;
+background-color: #dbdbdb;
+border:0.5px solid #acacac;
+border-radius: 3px;
+}
+.form-checkbox-label span{
+margin-right: 8px;
+}
+.innerbox .wrapper{
+border-bottom: 1px solid #dbdbdb;
+padding: 30px;
+}
+.innertitle{
+color: #0051A5; 
+font-weight: 600;  
+margin-left: 3px;
+}
+select{
+width: 100%;
+padding: 0 10px;
+}
+input{
+color: #696969;
+}
+.fa-calendar{
+position: relative;
+margin-left: -30px;
+}
+.quantity{
+width: 70px;
+margin: 10px 5px 0 5px;
+}
+.wrapperquantity{
+display: none;
+}
+    
+
+  

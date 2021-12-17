@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>新增標案</title>
+  <link rel='stylesheet' href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/normalize.css">
+  <link rel="stylesheet" href="css/base/basicStyle.css">
+  <link rel="stylesheet" href="css/layout/nav.css">
+  <link rel="stylesheet" href="css/components/toggle.css">
+  <link rel="stylesheet" href="css/components/timepicker.css">
+  <link rel="stylesheet" href="css/components/muli_select.css">
+  <link rel="stylesheet" href="css/pages/bid_add.css">
+  <link rel="stylesheet" href="css/base/jquery-ui.css">
+  <script src="js/jQuery_3.4.1.js"></script> 
+  <script src="js/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="header"></div> 
+    <script>
+        $("#header").load("header.html");
+    </script> 
+    <div class="container">
+        <div class="box">
+            <h1>承攬商管理/標案列表/新增標案</h1>
+        </div>
+        <div class="flex">
+            <div>
+                <table class="bid">
+                  <tr>
+                    <td class="columns-1">標案名稱</td>
+                    <td class="columns-1"><input id="bidname" type="text" placeholder="請輸入標案名稱" style="width:100%"></td>
+                  </tr>
+                  <tr>
+                    <td class="columns-1">駐點</td>
+                    <td class="columns-1">
+                      <form>
+                        <div class="multiselect">
+                          <div class="selectBox" onclick="showCheckboxes()">
+                            <select>
+                              <option>請選擇駐點地點</option>
+                            </select>
+                            <div class="overSelect"></div>
+                          </div>
+                          <div id="checkboxes">
+                            <label for="one">
+                              <input type="checkbox" value="蘇澳地磅站"/>蘇澳地磅站</label>
+                            <label for="two">
+                              <input type="checkbox" value="東澳地磅站"/>東澳地磅站</label>
+                            <label for="three">
+                              <input type="checkbox" value="南澳地磅站"/>南澳地磅站</label>
+                          </div>
+                        </div>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="columns-1">開工日期</td>
+                    <td class="columns-1">
+                      <div class="datetest">
+                        <p class="datag">
+                          <input type="text" id="datepicker" value="" placeholder="年/月/日"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="columns-1">預定竣工日期</td>
+                    <td class="columns-1">
+                      <div class="datetest">
+                        <p class="datag">
+                          <input type="text" id="datepicker1" value="" placeholder="年/月/日"><i class="fa fa-calendar" aria-hidden="true"></i>
+                        </p>
+                      </div>
+                    </td>
+                  <tr>
+                    <td class="columns-1">工時制度</td>
+                    <td class="columns-1">
+                      <select name="bid" id="bidform">
+                          <option>正常工時</option>
+                          <option>二週變形工時</option>
+                          <option>四週變形工時</option>
+                          <option>八週變形工時</option>
+                          <option>警衛協議工時</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="columns-1" style="vertical-align: top;">工作時間規則</td>
+                    <td class="columns-1">
+                    <div class="flex">
+                      <span class="fw-600">平班</span>
+                      <label class="checkbox-square checkbox-square0">
+                        <input type="checkbox" onclick="change('normaldotbox')"/>
+                        <span class="track thumb"></span>
+                        <pre class="state">false</pre>
+                      </label>
+                    </div>
+                    <div id="normaldotbox" class="dotbox">
+                      <div class="flex jus-start">
+                          <span>上班時間</span>
+                          <input type="text" class="form-control">
+                          <span>緩衝間隔時間</span>
+                          <input type="text" class="form-control">
+                      </div>
+                      <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>下班時間</span>
+                          <input type="text" class="form-control">
+                          <span>告警間隔時間</span>
+                          <input type="text" class="form-control">
+                            <label class="checkbox-square">
+                              <input type="checkbox" />
+                              <span class="track1 thumb"></span>
+                              <pre class="state">false</pre>
+                            </label>
+                      </div>
+                      <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>休息時間</span>
+                          <label class="checkbox-square">
+                            <input type="checkbox" onclick="change('normaltimewrapper')"/>
+                            <span class="track5 thumb"></span>
+                            <pre class="state">false</pre>
+                          </label>
+                          <div id="normaltimewrapper" class="flex timewrapper">
+                            <input type="text" class="form-control">
+                            <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="flex jus-start" style="margin: 15px 0;">
+                        <span>排班人力配置<input type="number" value="" id="quantity" class="quantity">人</span>
+                      </div>
+                      <div class="flex jus-start" style="margin: 15px 0;">
+                        <span>工時：9小時0分</span>
+                      </div>
+                  </div>
+                  <div class="flex">
+                    <span class="fw-600">早班</span>
+                    <label class="checkbox-square checkbox-square2">
+                      <input type="checkbox"  onclick="change('morndotbox')"/>
+                      <span class="track thumb"></span>
+                      <pre class="state">false</pre>
+                    </label>
+                  </div>
+                  <div id="morndotbox" class="dotbox">
+                        <div class="flex jus-start">
+                            <span>上班時間</span>
+                            <input type="text" class="form-control">
+                            <span>緩衝間隔時間</span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                            <span>下班時間</span>
+                            <input type="text" class="form-control">
+                            <span>告警間隔時間</span>
+                            <input type="text" class="form-control">
+                              <label class="checkbox-square">
+                                <input type="checkbox" />
+                                <span class="track1 thumb"></span>
+                                <pre class="state">false</pre>
+                              </label>
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>休息時間</span>
+                          <label class="checkbox-square">
+                            <input type="checkbox" onclick="change('morntimewrapper')"/>
+                            <span class="track5 thumb"></span>
+                            <pre class="state">false</pre>
+                          </label>
+                          <div id="morntimewrapper" class="flex timewrapper">
+                            <input type="text" class="form-control">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>排班人力配置<input type="number" value="" id="quantity" class="quantity">人</span>
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>工時：9小時0分</span>
+                        </div>
+                  </div>
+                  <div class="flex">
+                    <span class="fw-600">晚班</span>
+                    <label class="checkbox-square checkbox-square3">
+                      <input type="checkbox" onclick="change('evendotbox')" />
+                      <span class="track thumb"></span>
+                      <pre class="state">false</pre>
+                    </label>
+                  </div>
+                  <div id="evendotbox" class="dotbox">
+                          <div class="flex jus-start">
+                              <span>上班時間</span>
+                              <input type="text" class="form-control">
+                              <span>緩衝間隔時間</span>
+                              <input type="text" class="form-control">
+                          </div>
+                          <div class="flex jus-start" style="margin: 15px 0;">
+                              <span>下班時間</span>
+                              <input type="text" class="form-control">
+                              <span>告警間隔時間</span>
+                              <input type="text" class="form-control">
+                                <label class="checkbox-square">
+                                  <input type="checkbox" />
+                                  <span class="track1 thumb"></span>
+                                  <pre class="state">false</pre>
+                                </label>
+                          </div>
+                          <div class="flex jus-start" style="margin: 15px 0;">
+                            <span>休息時間</span>
+                            <label class="checkbox-square">
+                              <input type="checkbox" onclick="change('eventimewrapper')" />
+                              <span class="track5 thumb"></span>
+                              <pre class="state">false</pre>
+                            </label>
+                            <div id="eventimewrapper" class="flex timewrapper">
+                              <input type="text" class="form-control">
+                              <input type="text" class="form-control">
+                            </div>
+                          </div>
+                          <div class="flex jus-start" style="margin: 15px 0;">
+                            <span>排班人力配置<input type="number" value="" id="quantity" class="quantity">人</span>
+                          </div>
+                          <div class="flex jus-start" style="margin: 15px 0;">
+                            <span>工時：9小時0分</span>
+                          </div>
+                  </div>
+                  <div class="flex">
+                    <span class="fw-600">夜班</span>
+                    <label class="checkbox-square checkbox-square4">
+                      <input type="checkbox"onclick="change('nightdotbox')"  />
+                      <span class="track thumb"></span>
+                      <pre class="state">false</pre>
+                    </label>
+                  </div>
+                  <div id="nightdotbox" class="dotbox">
+                        <div class="flex jus-start">
+                            <span>上班時間</span>
+                            <input type="text" class="form-control">
+                            <span>緩衝間隔時間</span>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                            <span>下班時間</span>
+                            <input type="text" class="form-control">
+                            <span>告警間隔時間</span>
+                            <input type="text" class="form-control">
+                              <label class="checkbox-square">
+                                <input type="checkbox" />
+                                <span class="track1 thumb"></span>
+                                <pre class="state">false</pre>
+                              </label>
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>休息時間</span>
+                          <label class="checkbox-square">
+                            <input type="checkbox" onclick="change('nighttimewrapper')"/>
+                            <span class="track5 thumb"></span>
+                            <pre class="state">false</pre>
+                          </label>
+                          <div id="nighttimewrapper" class="flex timewrapper">
+                            <input type="text" class="form-control">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>排班人力配置<input type="number" value="" id="quantity" class="quantity">人</span>
+                        </div>
+                        <div class="flex jus-start" style="margin: 15px 0;">
+                          <span>工時：9小時0分</span>
+                        </div>
+                    </div>
+                    </td>
+                    </tr>
+                </table>
+        </div>
+    </div> 
+    <div class="mg-20-btn align_center">
+      <a href="bid.html"><input class="btn cancelbtn" type="button" name="Open" value="取消"></a>
+      <a href="bid.html"><input class="btn savebtn" type="button" name="Open" value="確定"></a>
+    </div>
+</body>
+<!-- toggle -->
+<script src="js/toggle.js"></script>
+<!-- date -->
+<script src="js/datepicker.js"></script>
+<!-- time -->
+<script src="js/timepicker.js"></script>
+<!-- multi select -->
+<script src="js/multi_select.js"></script>
+<script>
+  $('.form-control').each(function(){
+     $(this).timepicker();
+ });
+</script>
+<script>
+function change(a){
+  console.log(a) 
+  $('#'+a).toggle();
+};
+</script>
+</html> 

@@ -1,0 +1,28 @@
+.selectBox {
+position: relative;
+}
+.selectBox select {
+width: 100%;
+color: #dbdbdb;
+border-radius: 3px;
+}
+.overSelect {
+position: absolute;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+}
+#checkboxes {
+padding: 6px 10px;
+display: none;
+border: 1px #dadada solid;
+}
+#checkboxes label {
+display: block;
+padding:5px;
+box-sizing: border-box;
+}
+input[type=checkbox]{
+margin:2px 5px;
+}
